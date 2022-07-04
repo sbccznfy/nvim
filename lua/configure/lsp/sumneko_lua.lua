@@ -14,7 +14,6 @@ local root_files = {
     ".luacheckrc",
     ".stylua.toml",
     "selene.toml",
-    "init.lua"
 }
 
 return vim.tbl_deep_extend("keep", lua_dev.setup(), {
