@@ -20,6 +20,7 @@ local aux_cmp = require("utils.aux.cmp")
 local M = {
     safe_requires = {
         { "cmp" },
+        { "cmp.types", "cmp_types" },
     },
     icons = api.get_icons("lsp_kind", false),
     -- complete the floating window settings of the menu
@@ -46,8 +47,10 @@ function M.before() end
 
 function M.load()
     local cmp_opts = {
+        -- uncheck auto-select (gopls)
+        preselect = M.cmp_types.cmp.PreselectMode.None,
+        -- Insert or Replace
         confirmation = {
-            -- Insert or Replace
             default_behavior = M.cmp.ConfirmBehavior.Insert,
         },
         snippet = {
