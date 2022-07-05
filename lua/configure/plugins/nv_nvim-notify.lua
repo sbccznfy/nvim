@@ -12,7 +12,7 @@ local M = {
         -- navic
         'nvim%-navic: Server ".*" does not support documentSymbols.',
         -- LSP
-        "%[LSP%]%[sumneko_lua%] timeout",
+        "%[LSP%]%[.+%] timeout",
         "LSP%[id=%d*%] client has shut down after sending Log",
         "LSP%[id=%d*%] client has shut down during progress update",
         "LSP%[id=%d*%] client has shut down while creating progress report",
