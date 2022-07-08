@@ -28,7 +28,7 @@ function M.load()
         shading_factor = 1,
         size = function(term)
             if term.direction == "horizontal" then
-                return vim.o.lines * 0.2
+                return vim.o.lines * 0.3
             elseif term.direction == "vertical" then
                 return vim.o.columns * 0.25
             end
