@@ -274,6 +274,8 @@ function M.is_transparent()
         ["HopNextKey1"] = { fg = colors.blue, bg = "none", bold = true },
         ["HopNextKey2"] = { fg = colors.teal, bg = "none", bold = true, italic = true },
         ["HopUnmatched"] = { fg = colors.gray0, bg = "none" },
+        -- nvim tree split
+["NvimTreeVertSplit"] = { fg = colors.back0 }
     })
 
     if not options.float_border then

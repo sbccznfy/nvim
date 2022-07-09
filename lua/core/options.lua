@@ -1,7 +1,7 @@
 local api = require("utils.api")
 local options = {
     -- whether to enable transparent background
-    transparent = true,
+    transparent = false,
     -- whether to show winbar
     show_winbar = true,
     -- whether to add a border to the floating window

@@ -14,7 +14,7 @@ function M.load()
         ignore = {},
         sign = {
             enabled = true,
-            priority = 10,
+            priority = 15,
         },
         float = {
             enabled = false,
@@ -39,7 +39,7 @@ function M.after()
     vim.fn.sign_define("LightBulbSign", { text = "💡", texthl = "DiagnosticSignWarn", linehl = "", numhl = "" })
 
     -- create an autocommand that displays a small light bulb when code actions are available
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI", "CursorMoved", "CursorMovedI" }, {
         pattern = { "*" },
         callback = function()
             M.lightbulb.update_lightbulb()
