@@ -94,7 +94,6 @@ $ cd ~/.config/
 $ mv nvim ./nvim-bak -- if you haven't configured Neovim yourself, this step can be omitted
 $ git clone https://github.com/askfiy/nvim
 $ cd ~/.config/nvim
-$ git checkout neovim-0.8
 ```
 
 ## personalized configuration
