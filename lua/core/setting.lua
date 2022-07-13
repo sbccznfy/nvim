@@ -3,8 +3,6 @@
 local setting = {
     g = {
         mapleader = " ",
-        do_filetype_lua = 1,
-        did_load_filetypes = 0,
     },
     opt = {
         ruler = false,
