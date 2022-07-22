@@ -44,7 +44,7 @@ local aux_lsp = {
 
 function aux_lsp.get_active_lsp_clients()
     local active_clients = vim.lsp.get_active_clients()
-    local ignore_lsp = { "copilot", "null-ls"}
+    local ignore_lsp = { "copilot", "null-ls" }
     local buf_ft = vim.bo.filetype
 
     if buf_ft ~= "markdown" then
@@ -189,6 +189,17 @@ function aux_lsp.quick_set(float_border)
         float = { source = "always" },
         virtual_text = { prefix = "●", source = "always" },
     })
+
+    -- FIX: Diagnostic refresh is not timely
+    if not vim.diagnostic.config().update_in_insert then
+        vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+            pattern = { "*" },
+            callback = function()
+                vim.diagnostic.show()
+            end,
+            nested = true,
+        })
+    end
 
     for tpe, icon in pairs(aux_lsp.icons) do
         local hl = "DiagnosticSign" .. tpe
