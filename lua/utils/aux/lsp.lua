@@ -190,17 +190,6 @@ function aux_lsp.quick_set(float_border)
         virtual_text = { prefix = "●", source = "always" },
     })
 
-    -- FIX: Diagnostic refresh is not timely
-    if not vim.diagnostic.config().update_in_insert then
-        vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-            pattern = { "*" },
-            callback = function()
-                vim.diagnostic.show()
-            end,
-            nested = true,
-        })
-    end
-
     for tpe, icon in pairs(aux_lsp.icons) do
         local hl = "DiagnosticSign" .. tpe
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
