@@ -22,9 +22,9 @@ local M = {
     },
     echo_message = {
         -- DAP
-        "Debug adapter disconnected",
         "could not find file",
-        "No stopped thread. Cannot move",
+        "Debug adapter disconnected",
+        "No stopped threads. Cannot move",
     },
 }
 
