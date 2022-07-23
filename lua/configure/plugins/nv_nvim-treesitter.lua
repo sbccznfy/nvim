@@ -24,7 +24,7 @@ function M.before() end
 function M.load()
     M.nvim_treesitter.setup({
         ensure_installed = "all",
-        ignore_install = { "phpdoc" },
+        ignore_install = { "phpdoc" , "jsonc", "fusion"},
         highlight = {
             enable = true,
             additional_vim_regex_highlighting = false,

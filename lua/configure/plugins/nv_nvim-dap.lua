@@ -14,7 +14,7 @@ function M.before()
 end
 
 function M.load()
-    ---@diagnostic disable-next-line: missing-parameter
+---@diagnostic disable-next-line: param-type-mismatch
     local file_list = vim.fn.globpath(M.dap_root_directory, "*.lua", false, true)
 
     for _, file in ipairs(file_list) do

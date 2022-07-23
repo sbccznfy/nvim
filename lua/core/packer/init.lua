@@ -37,35 +37,25 @@ packer.init({
 packer.startup({
     function(use)
         for plug_name, plug_config in pairs(plugins_installer_table) do
-            plug_config = vim.tbl_deep_extend("force", { plug_name }, plug_config)
-            local plug_file_name = plug_config.as or string.match(plug_name, "/([%w%-_]+).?")
+            plug_config[1] = plug_name
 
-            local plug_file_load_path = api.path.join(
-                "configure",
-                "plugins",
-                string.format("nv_%s", plug_file_name:lower())
-            )
+            local require_name = plug_config.as or string.match(plug_name, "/([%w%-_]+).?")
+            local require_path = api.path.join("configure", "plugins", string.format("nv_%s", require_name:lower()))
+            local ok, _ = pcall(require, require_path)
 
-            local plug_file_disk_path = api.path.join(
-                vim.fn.stdpath("config"),
-                "lua",
-                string.format("%s.lua", plug_file_load_path)
-            )
-
-            if api.path.exists(plug_file_disk_path) then
-                plug_config.setup = string.format("require('%s').before()", plug_file_load_path)
+            if ok then
+                plug_config.setup = string.format("require('%s').before()", require_path)
                 plug_config.config = string.format(
                     [[
                          require('utils.api').safe_load(require('%s'))
                          require('%s').load()
                          require('%s').after()
-                         ]],
-                    plug_file_load_path,
-                    plug_file_load_path,
-                    plug_file_load_path
+                     ]],
+                    require_path,
+                    require_path,
+                    require_path
                 )
             end
-
             use(plug_config)
         end
         if Packer_bootstrap then
