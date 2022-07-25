@@ -12,11 +12,11 @@ This is a configuration based on neovim 0.8, it has good extensibility, and at t
 
 ## screenshot
 
-![](https://images-1302522496.cos.ap-nanjing.myqcloud.com/img/20220628175433.png)
+![2022-07-25_17-04](https://user-images.githubusercontent.com/81478335/180747722-7780c843-efee-4e22-a7f2-cae26840ddd5.png)
 
-![](https://images-1302522496.cos.ap-nanjing.myqcloud.com/img/20220628175834.png)
+![2022-07-25_17-03_1](https://user-images.githubusercontent.com/81478335/180747728-161648ff-dcb7-406f-b606-3f790fc85827.png)
 
-![](https://images-1302522496.cos.ap-nanjing.myqcloud.com/img/20220628180054.png)
+![2022-07-25_17-03](https://user-images.githubusercontent.com/81478335/180747736-671064ba-560b-457d-9acd-cf8ed30a484c.png)
 
 ## dependencies
 
