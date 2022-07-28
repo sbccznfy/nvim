@@ -344,3 +344,9 @@ Some plugins default key descriptions are stored in the [nv_which-key.lua](./lua
 - TSUpdate all    : Update tree-sitter parser
 - Copilot setup   : login copilot
 ```
+
+## todo
+
+1. Replace nvim-lsp-installer with mason.nvim (wait for it to stabilize)
+2. Use lualine's winbar to replace navic.nvim winbar
+3. Simplify the installation process through mason.nvim and achieve fully automated installation
